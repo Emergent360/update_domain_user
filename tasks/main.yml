@@ -23,4 +23,4 @@
     domain_username: "{{ ad_domain_username }}"
     domain_password: "{{ ad_domain_password }}"
     domain_server: "{{ ad_domain_server }}"
-  when: "{{ ad_user_state }} != query"
+  when: " ad_user_state != query"
