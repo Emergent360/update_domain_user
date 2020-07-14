@@ -1,0 +1,23 @@
+---
+# tasks file for update_domain_user
+- name: query domain user
+  win_domain_user:
+    name: "{{ ad_username }}"
+    state: query
+  register: ad_user
+
+- debug:
+    msg: "{{ ad_user }}"
+
+- name: update domain user
+  win_domain_user:
+    name: "{{ ad_username }}"
+    state: "{{ ad_user_state }}"
+    enabled: "{{ ad_acct_enabled }}"
+    password: "{{ ad_user_password }}"
+    update_password: "{{ ad_update_password }}"
+    groups: "{{ ad_group_list }}"
+    groups_action: replace
+    domain_username: "{{ ad_domain_username }}"
+    domain_password: "{{ ad_domain_password }}"
+    domain_server: "{{ ad_domain_server }}"
