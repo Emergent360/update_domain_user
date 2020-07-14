@@ -16,8 +16,8 @@
   win_domain_user:
     name: "{{ ad_username }}"
     state: "{{ ad_user_state }}"
-    enabled: "{{ ad_acct_enabled }}"
-    password: "{{ ad_user_password }}"
+    enabled: "{{ ad_acct_enabled | default(omit) }}"
+    password: "{{ ad_user_password | default(omit) }}"
     groups: "{{ ad_group_list | default(omit) }}"
     groups_action: replace
     domain_username: "{{ ad_domain_username }}"
