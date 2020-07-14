@@ -18,7 +18,7 @@
     state: "{{ ad_user_state }}"
     enabled: "{{ ad_acct_enabled }}"
     password: "{{ ad_user_password }}"
-    groups: "{{ ad_group_list | ad_user.groups }}"
+    groups: "{{ ad_group_list | default(omit) }}"
     groups_action: replace
     domain_username: "{{ ad_domain_username }}"
     domain_password: "{{ ad_domain_password }}"
