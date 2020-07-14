@@ -4,6 +4,9 @@
   win_domain_user:
     name: "{{ ad_username }}"
     state: query
+    domain_username: "{{ ad_domain_username }}"
+    domain_password: "{{ ad_domain_password }}"
+    domain_server: "{{ ad_domain_server }}"
   register: ad_user
 
 - debug:
