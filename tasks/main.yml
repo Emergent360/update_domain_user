@@ -11,6 +11,7 @@
 
 - debug:
     msg: "{{ ad_user }}"
+  when: ad_user_state == "query"
 
 - name: update domain user
   win_domain_user:
