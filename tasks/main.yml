@@ -23,5 +23,5 @@
     groups_action: replace
     domain_username: "{{ ad_domain_username }}"
     domain_password: "{{ ad_domain_password }}"
-    domain_server: "{{ ad_domain_server }}"
+    domain_server: "{{ ad_domain_name }}"
   when: ad_user_state != "query"
